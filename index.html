@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Artes</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Applying the Montserrat font to the body */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* --- Opening Animation Styles --- */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000; /* Black background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 1.5s ease-out;
+        }
+        
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none; /* Allows clicks to go through to content below */
+        }
+        
+        #loading-screen h1, #loading-screen h2 {
+            opacity: 0;
+            text-align: center;
+        }
+        
+        #loading-screen h1 {
+            color: white;
+            font-size: 2.5rem;
+            animation: fadeIn 2s forwards;
+            animation-delay: 0.5s;
+        }
+        
+        #loading-screen h2 {
+            color: #8B0000; /* Blood red color */
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* --- "Flamengo" Text on Click Animation --- */
+        @keyframes fadeAndFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+
+        .flamengo-text {
+            position: absolute;
+            color: #8B0000; /* Blood red color */
+            font-size: 2rem;
+            font-weight: bold;
+            pointer-events: none;
+            user-select: none;
+            animation: fadeAndFloat 1.5s forwards;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Opening Animation Screen -->
+    <div id="loading-screen">
+        <h1 class="font-bold">Portfólio do Marcos Augusto da Silva</h1>
+        <h2 class="font-bold">Vai FLAMENGOOOOOOOOOOOOO</h2>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-black py-8 shadow-lg shadow-red-500/20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-wider">Meu Portfólio de Artes</h1>
+            <p class="text-lg text-gray-400 mt-2">Uma jornada visual através das minhas aulas</p>
+        </div>
+    </header>
+
+    <!-- Main Content: Timeline of Classes -->
+    <main class="container mx-auto px-4 py-12 md:py-16">
+        <div class="relative wrap overflow-hidden p-2 md:p-10 h-full">
+            <!-- Red timeline bar that runs down the middle -->
+            <div class="absolute h-full border-2-2 border-red-500" style="left: 50%; border: 2px solid #ef4444; border-radius: 1%;"></div>
+            <div class="absolute h-full border-2-2 border-red-500 md:hidden" style="left: 20px; border: 2px solid #ef4444; border-radius: 1%;"></div>
+
+            <!-- Timeline Item: Aula 1 -->
+            <div class="mb-8 flex justify-between items-center w-full right-timeline md:right-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                    <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                </div>
+                <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 border-l-4 border-red-500">
+                    <h3 class="font-bold text-xl mb-2 text-red-400">Aula 1</h3>
+                    <p class="text-sm text-gray-400 mb-4">Data: 25 de abril de 2025</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Meio de avaliação do professor.</li>
+                        <li>Introdução às artes visuais.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Aula 2 -->
+            <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline md:left-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                    <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
+                </div>
+                <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 border-r-4 md:border-l-0 md:border-r-4 border-red-500">
+                    <h3 class="font-bold text-xl mb-2 text-red-400">Aula 2</h3>
+                    <p class="text-sm text-gray-400 mb-4">Data: 9 de maio de 2025</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Pintar o mural (De branco).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Timeline Item: Aula 3 -->
+            <div class="mb-8 flex justify-between items-center w-full right-timeline md:right-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                    <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+                </div>
+                <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 border-l-4 border-red-500">
+                    <h3 class="font-bold text-xl mb-2 text-red-400">Aula 3</h3>
+                    <p class="text-sm text-gray-400 mb-4">Data: 16 de maio de 2025</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Elementos visuais: linha e plano.</li>
+                        <li>Elementos visuais: luz, sombra e volume.</li>
+                        <li>Elementos visuais: cores.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Aula 4 -->
+            <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline md:left-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                    <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
+                </div>
+                <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 border-r-4 md:border-l-0 md:border-r-4 border-red-500">
+                    <h3 class="font-bold text-xl mb-2 text-red-400">Aula 4</h3>
+                    <p class="text-sm text-gray-400 mb-4">Data: 23 de maio de 2025</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Decidir como vamos pintar o muro.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Timeline Item: Aula 5 -->
+            <div class="mb-8 flex justify-between items-center w-full right-timeline md:right-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-20 flex items-center order-1 bg-red-500 shadow-xl w-8 h-8 rounded-full">
+                    <h1 class="mx-auto font-semibold text-lg text-white">5</h1>
+                </div>
+                <div class="order-1 bg-gray-800 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 border-l-4 border-red-500">
+                    <h3 class="font-bold text-xl mb-2 text-red-400">Aula 5</h3>
+                    <p class="text-sm text-gray-400 mb-4">Data: 30 de maio de 2025</p>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Pintar o mural (final).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Image Gallery Link Section -->
+        <div class="text-center mt-12 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Galeria de Imagens</h2>
+            <p class="text-gray-400 mb-6">Link para ver as imagens das nossas aulas:</p>
+            <a href="https://postimg.cc/gallery/3GH0v1z" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Ver Galeria
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="bg-black py-4">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Custom CSS to handle timeline layout on mobile -->
+    <style>
+        @media (max-width: 768px) {
+            .right-timeline, .left-timeline {
+                justify-content: flex-start;
+                padding-left: 50px;
+            }
+            .right-timeline .z-20, .left-timeline .z-20 {
+                position: absolute;
+                left: 0;
+                margin-left: 10px;
+            }
+            .right-timeline .order-1, .left-timeline .order-1 {
+                width: 100%;
+            }
+            .left-timeline {
+                flex-direction: row;
+            }
+            .left-timeline .border-r-4 {
+                 border-right-width: 0;
+                 border-left-width: 4px;
+            }
+        }
+    </style>
+
+    <script>
+        // --- Opening Animation Script ---
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            // Hide the loading screen after 4 seconds
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 4000);
+        });
+
+        // --- "Flamengo" Text on Click Script ---
+        document.addEventListener('click', function(e) {
+            const loadingScreen = document.getElementById('loading-screen');
+            // Prevent the effect from running while the loading screen is visible
+            if (loadingScreen.classList.contains('hidden')) {
+                const textElement = document.createElement('span');
+                textElement.textContent = 'Flamengo';
+                textElement.className = 'flamengo-text';
+                
+                textElement.style.left = `${e.pageX - 40}px`;
+                textElement.style.top = `${e.pageY - 20}px`;
+                
+                document.body.appendChild(textElement);
+                
+                setTimeout(() => {
+                    textElement.remove();
+                }, 1500);
+            }
+        });
+    </script>
+
+</body>
+</html>
